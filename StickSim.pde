@@ -1,3 +1,8 @@
+/* TODO: ADD COMMENTS 
+         NEATEN PROGRAM
+         NICE UI
+*/
+
 int delta, prevMillis;
 float G = 0.1;
 
@@ -47,6 +52,14 @@ void draw() {
 void mouseReleased() {
     PVector mPos = new PVector(mouseX, mouseY);
     if (stick) {
+
+        /* 
+            If in stick placing mode, find the closest point, if the click is within the circle,
+            then that point is selected. If there is already a point selected, draw a line
+            between the two points first.
+
+            If not in stick placing mode, just add a new point where the mouse was clicked.
+        */
         if (points.size() == 0) return;
         Point c = points.get(0);
         for (Point p : points) {

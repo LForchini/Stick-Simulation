@@ -9,6 +9,12 @@ class Stick {
     }
 
     void update() {
+        /* 
+            Adjust each point so that they are the appropriate distance apart.
+            For this to work with multiple sticks, the update routine should
+            be called multiple times so that an equilibrium can be achieved.
+        */
+
         PVector center = PVector.add(pointA.pos, pointB.pos).div(2);
         PVector dir = PVector.sub(pointA.pos, pointB.pos).normalize();
 
